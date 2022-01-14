@@ -1,0 +1,207 @@
+.upper {
+    background: #cbc2ba;
+    width: 100%;
+    height: 50px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1b130e;
+    display: flex;
+    justify-content: center;
+}
+
+.upper__content {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upper__nav {
+    display: flex;
+    height: 50px;
+}
+
+.upper__nav li {
+    list-style-type: none;
+    margin-right: 40px;
+}
+
+.upper__nav ul {
+    display: flex;
+    padding: 0;
+}
+
+.upper__icon {
+    display: none;
+}
+
+.upper__content .upper__controls {
+    display: flex;
+}
+
+.upper__content .upper__controls a {
+    color: #1b130e;
+    height: 16px;
+    display: flex;
+}
+
+.upper__content .upper__controls h5 {
+    margin-right: 40px;
+}
+
+.upper__content .upper__controls img {
+    margin-right: 10px;
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .upper__controls .upper__controls_showmob {
+        display: block;
+        background: #ffffff;
+        width: 32px;
+        height: 32px;
+        border-radius: 20px;
+        margin-left: 15px;
+    }
+    .upper__controls .upper__controls_showmob .counter{
+        transform: translate(0, 0);
+    }
+    .upper__controls .upper__controls_showmob img {
+        margin-top: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .upper__controls .upper__controls_showmob .counter {
+        margin-top: -40px;
+        margin-left: 20px;
+    }
+
+
+    .upper__controls > a > h5 {
+        display: none;
+    }
+
+    /*бургер*/
+    .upper__icon {
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 25px;
+        height: 18px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    .upper__icon::before,
+    .upper__icon::after {
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 10%;
+        position: absolute;
+        transition: all 0.3s ease 0s;
+        background-color: #fff;
+        border-radius: 1.5px;
+    }
+
+    .upper__icon::before {
+        top: 0;
+    }
+
+    .upper__icon::after {
+        bottom: 0;
+    }
+
+    .upper__icon span {
+        left: 0;
+        width: 80%;
+        height: 10%;
+        transition: all 0.3s ease 0s;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+        border-radius: 1.5px;
+    }
+
+    .upper__icon._active span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .upper__icon._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .upper__icon._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+
+
+    /*скрываем верхнее меню*/
+    .upper__nav ul {
+        display: none;
+    }
+
+    .navigation .menu {
+        overflow: auto;
+        z-index: 4;
+        position: fixed;
+        top: -120%;
+        transition: top 0.3s ease 0s;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #cbc2ba;
+        opacity: 0.9;
+        padding: 60px 30px 30px 30px;
+        align-items: start;
+    }
+
+    .navigation .menu._active {
+        top: 0;
+    }
+
+    .navigation .menu .menu__list > li._active .menu__sublist {
+        display: block;
+    }
+
+    .navigation .menu .menu__list {
+        flex-direction: column;
+    }
+
+    .navigation .menu .menu__items {
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+
+    .navigation .menu .menu__link {
+        font-size: 24px;
+    }
+
+    .navigation .menu .menu__sublist {
+        position: relative;
+        width: 65%;
+        margin-top: 10px;
+        display: none;
+        opacity: 1;
+    }
+
+    .navigation .menu .menu__sublink {
+        font-size: 20px;
+    }
+    .upper__icon > li {
+        display: none;
+    }
+}
+
+
