@@ -7,6 +7,7 @@ import isMobile from "../../../assets/Tools/isMobile";
 import {useEffect, useState} from "react";
 import classNames from "classnames/bind";
 import MenuItems from "./MenuItems";
+import {Link} from "react-router-dom";
 
 
 const LowerHeader = (props) => {
@@ -23,11 +24,11 @@ const LowerHeader = (props) => {
         <div className="navigation">
             <div className="navigation__content content">
                 <div className="navigation__left">
-                    <img src={logo} alt="логотип веб-сайта" className="navigation__logo"/>
+                   <Link to="/"><img src={logo} alt="логотип веб-сайта" className="navigation__logo"/></Link>
                     {/*Основное меню*/}
                     <nav className={props.menuClass}>
                         <ul className="menu__list">
-                            <MenuItems isSublist={true}>КАТЕГОРИИ</MenuItems>
+                            <MenuItems link="categories" isSublist={true}>КАТЕГОРИИ</MenuItems>
                             <MenuItems>БРЕНДЫ</MenuItems>
                             <MenuItems>ИНФОРМАЦИЯ</MenuItems>
                             <MenuItems>О КОМПАНИИ</MenuItems>

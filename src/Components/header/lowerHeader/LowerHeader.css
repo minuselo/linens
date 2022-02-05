@@ -280,6 +280,7 @@ body._pc .menu__list > li:hover .menu__sublist {
     visibility: visible;
     transform: translate(0px, 0px);
     pointer-events: all;
+    z-index: 100;
 }
 
 body._touch .menu__list > li {

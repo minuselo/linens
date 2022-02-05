@@ -1,17 +1,23 @@
 import './App.css';
 import {useDispatch} from "react-redux";
-import {main} from "./store/mainSlice";
 import React from "react";
 import Header from "./Components/header/Header";
-import Products from "./Components/mainPage/products/Products";
 import MainPage from "./Components/mainPage/MainPage";
+import Footer from "./Components/footer/Footer";
+import {Routes, Route} from "react-router-dom";
+import Categories from "./Components/categories/Categories";
+import {Layout} from "./Layout";
 
 function App() {
     const dispatch = useDispatch();
     return (
         <div className="App">
-            <Header/>
-            <MainPage/>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                    <Route index element={<MainPage/>}/>
+                    <Route path="categories/*" element={<Categories/>}/>
+                </Route>
+            </Routes>
         </div>
     );
 }

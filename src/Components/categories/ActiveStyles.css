@@ -1,0 +1,39 @@
+.categories__active a.active:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 200px;
+    background: #CBC2BA;
+
+}
+
+.categories__active a.active {
+    background: #CBC2BA;
+    padding: 5px 0 5px 0;
+}
+.categories__active a{
+    width: 100%;
+    text-align: center;
+    color: #1B130E;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+
+@media (max-width: 768px) {
+    .categories__active.categories__mobilenav{
+        background: #E5E5E5;
+    }
+    .categories__active.categories__mobilenav{
+        display: none;
+    }
+
+    .categoriesMenu span{
+        position: absolute;
+        right: 10px;
+    }
+}
