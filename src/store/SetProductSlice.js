@@ -1,9 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const mainSlice = createSlice({
-    name: 'mainSlice',
+    name: 'ProductSlice',
     initialState: {
-        mainArray: [1,2,3]
+        id:null,
+        name:null,
+        
     },
     reducers: {
         main(state,action) {
